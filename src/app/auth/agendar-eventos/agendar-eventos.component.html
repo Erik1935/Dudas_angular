@@ -1,0 +1,76 @@
+<body class="d-flex justify-content-center">
+    <div class="container-fluid">
+        <div class="row justify-content-center mt-1">
+            <div class="login-logo">
+                <a><b>Servicios</b>TI.</a>
+              </div>
+        </div>
+      <div class="row mt-1">
+        <div class="col-md-4 mt-1">
+          <div class="sticky-top mb-3">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">Crea un evento</h4>
+              </div>
+              <div class="card-body">
+                <!-- the events -->
+                <form [formGroup]="formServicio">
+                    <div class="form-group">
+                      <label for="titulo">Titulo</label>
+                      <input type="text" formControlName="titulo" class="form-control" id="titulo" placeholder="Ingrese un titulo">
+                      <small id="tituloDescripcion" class="form-text text-muted">Es necesario colocar un titulo para identificar el servicio</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="nombre">Nombre Completo</label>
+                      <input type="text" formControlName="nombre_completo" class="form-control" id="nombre" placeholder="Ingrese su nombre completo">
+                    </div>
+                    <div class="form-group">
+                      <label for="area">Area</label>
+                      <select formControlName="id_area" name="select" class="form-control">
+                        <option *ngFor="let dato of nombreAreas" [value]="dato.id">{{dato.nombre}}</option>
+  
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="descripcion">Descripcion</label>
+                     <textarea name="" formControlName="descripcion" class="form-control" id="descripcion" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="hora_inicio">Fecha Inicio</label>
+                      <input type="time"  formControlName="hora_inicio" class="form-control" id="hora_inicio">
+                    </div>
+                    <div class="form-group">
+                      <label for="fecha_inicio">Fecha Inicio</label>
+                      <input type="date" [min]="fechaActual"  formControlName="fecha_inicio" class="form-control" id="fecha_inicio">
+                    </div>
+                    <div class="form-group">
+                      <label for="colorPick">Color</label>
+                      <input type="color" formControlName="color" class="form-control" id="colorPick" placeholder="Password">
+                    </div>
+                    <button (click)="compararFecha()" type="button" class="btn btn-primary">Submit</button>
+                  </form>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+                <input type="button" routerLink="/inicio"  class="form-control" value="Regresar">
+          </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-md-8">
+          <div class="card card-primary">
+            <div class="card-body p-0">
+              <!-- THE CALENDAR -->
+              <full-calendar #calendar [options]="calendarOptions"></full-calendar>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        {{formServicio.value|json}}
+        <h2>Estado del formulario: {{formServicio.invalid}}</h2>
+        <!-- /.Row no tocar este -->
+      </div>
+      </div>
+     
+    </body>

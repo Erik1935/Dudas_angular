@@ -1,0 +1,97 @@
+<div class="content-wrapper">
+<section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Calendar</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Calendar</li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+      <div class="container-fluid ">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header p-2">
+                <ul class="nav nav-pills">
+                  <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Activity</a></li>
+                    </ul>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content">
+                  <div class="active tab-pane" id="activity">
+                    <!-- Contenido -->
+                    <form [formGroup]="formServicio">
+                      <div class="form-group">
+                        <label for="titulo">Titulo</label>
+                        <input type="text" formControlName="titulo" class="form-control" id="titulo" placeholder="Ingrese un titulo">
+                        <small id="tituloDescripcion" class="form-text text-muted">Es necesario colocar un titulo para identificar el servicio</small>
+                      </div>
+                      <div class="form-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" formControlName="nombre_completo" class="form-control" id="nombre" placeholder="Ingrese su nombre completo">
+                      </div>
+                      <div class="form-group">
+                        <label for="area">Area</label>
+                        <select formControlName="id_area" name="select" class="form-control">
+                         <!-- <option *ngFor="let dato of nombreAreas" [value]="dato.id">{{dato.nombre}}</option>
+                         -->
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="descripcion">Descripcion</label>
+                       <textarea name="" formControlName="descripcion" class="form-control" id="descripcion" cols="30" rows="10"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="hora_inicio">Fecha Inicio</label>
+                        <input type="time"  formControlName="hora_inicio" class="form-control" id="hora_inicio">
+                      </div>
+                      <div class="form-group">
+                        <label for="fecha_inicio">Fecha Inicio</label>
+                        <input type="date"   formControlName="fecha_inicio" class="form-control" id="fecha_inicio">
+                      </div>
+                      <div class="form-group">
+                        <label for="colorPick">Color</label>
+                        <input type="color" formControlName="color" class="form-control" id="colorPick" placeholder="Password">
+                      </div>
+                      <button  type="button" class="btn btn-primary">Submit</button>
+                    </form>
+                    <!-- /Contenido -->
+                  </div>
+                </div>
+                <!-- /.tab-content -->
+              </div><!-- /.card-body -->
+            </div>
+          </div>
+          
+          <!-- /.col -->
+
+        <div class="col-md-7">
+          <div class="card card-primary">
+            <div class="card-body p-0 ">
+              <!-- THE CALENDAR -->
+              <full-calendar #calendar [options]="calendarOptions">
+              </full-calendar>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+          <!-- /.Row no tocar este -->
+        </div>
+        </div>
+  
+      
+
+</div>    
+<!----Aqui-->
+
+ 
+    
+    

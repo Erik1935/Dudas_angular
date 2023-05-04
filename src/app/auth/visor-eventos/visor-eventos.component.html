@@ -1,0 +1,47 @@
+<body class="d-flex justify-content-center">
+    <section class="content">
+      <div class="container-fluid">
+          <div class="row justify-content-center mt-2">
+              <div class="login-logo">
+                  <a><b>Servicios</b>TI.</a>
+                </div>
+          </div>
+        <div class="row mt-1">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                  Monitor de Servicio
+                </h3>
+              </div>
+              <!-- /.card-header -->
+              <div #detalles id="det" class="card-body">
+                <dl>
+                  <dt>Titulo</dt>
+   
+                  <dt>Descripcion</dt>
+  
+                  <dt>Estado</dt>
+                  <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
+                    </div>
+                </dl>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- ./col -->
+        </div>
+        <label  class="">Ingrese su token para encontrar su servicio</label>
+        <form [formGroup]="formServicio" class="">
+          <div class="form-group mx-sm-3 mb-2">
+            <input type="text" formControlName="token" class="form-control"  placeholder="Token">
+          </div>
+          <button type="button" (click)="mostrarDatosServicio()" class="btn btn-primary mb-2">Buscar</button>
+        </form>
+      </div>
+    </section>
+  </body>
+  
